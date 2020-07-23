@@ -13,7 +13,7 @@
 实体类数据包括了层级、打开或者关闭的状态、当前行的数据和当前行的子数据
 
 2.数据初始化
-        // 第一层数据初始化
+         // 第一层数据初始化
         ArrayList<TreeItem> list = new ArrayList<>();
         TreeItem treeItem0 = getTreeItem(0, "第一层0");
         TreeItem treeItem1 = getTreeItem(0, "第一层1");
