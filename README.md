@@ -1,6 +1,7 @@
 # TreeRecycleView
 
 1.实体类数据
+```
         //层级
         private int level;
         //状态，打开或者关闭
@@ -9,11 +10,13 @@
         private HashMap<String, String> obj;
         //当前行的子数据
         private List<TreeItem> child;
+```
   
 实体类数据包括了层级、打开或者关闭的状态、当前行的数据和当前行的子数据
 
 2.数据初始化
-         // 第一层数据初始化
+```
+        // 第一层数据初始化
         ArrayList<TreeItem> list = new ArrayList<>();
         TreeItem treeItem0 = getTreeItem(0, "第一层0");
         TreeItem treeItem1 = getTreeItem(0, "第一层1");
@@ -43,15 +46,17 @@
         treeItem0_0.addChilds(list0_0_0)
         
         treeAdapter.setDatas(list);
-        
+```
 数据的初始化一层套一层，初始化第一层然后再将第二层的数据挂在第一层，如果有下一层以此类推。
 
 3.继承TreeAdapter，实现onCreateViewHolder方法和getItemViewType方法，你可以实现多布局多样式，也可以自主做各种动作或者从网络获取下一层数据，扩展性很强，可以随自己需要设定。
+```
         if (model.isOpen()){
              doClose(position, model);
         }else{
              doOpen(position, model);
         }
+```
 上面列出的是一个重要的代码，在某项被点击的时候，通过状态然后调用doClose或者doOpen,只要数据设置没有问题，父类会自动实现展开和关闭并加上平滑的动画。
 
 
